@@ -13,7 +13,7 @@ let mainWindow;
 function createMainWindow() {
     mainWindow = new BrowserWindow({
         title: 'Image Resizer',
-        width: isDev ? 1000: 500,
+        width: 500,
         height: 600,
         webPreferences: {
             contextIsolation: true,
@@ -23,9 +23,9 @@ function createMainWindow() {
     });
 
     // Open devtools if in dev env
-    if(isDev){
-        mainWindow.webContents.openDevTools();
-    }
+    // if(isDev){
+    //     mainWindow.webContents.openDevTools();
+    // }
 
     mainWindow.loadFile(path.join(__dirname, './renderer/index.html'));
 }
